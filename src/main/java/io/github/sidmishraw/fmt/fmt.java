@@ -32,7 +32,7 @@
 * fmt.java
 * @author Sidharth Mishra
 * @created Tue Oct 30 2018 22:08:50 GMT-0700 (PDT)
-* @last-modified Wed Oct 31 2018 00:37:14 GMT-0700 (PDT)
+* @last-modified Wed Oct 31 2018 00:51:25 GMT-0700 (PDT)
 */
 
 package io.github.sidmishraw.fmt;
@@ -58,8 +58,6 @@ import lombok.NoArgsConstructor;
  * @since 1.0.0
  */
 public class fmt {
-
-    private static Lock lock = new ReentrantLock();
 
     private static final fmt getInstance() {
         return new fmt();
@@ -135,6 +133,7 @@ public class fmt {
     }
 
     private String recEval(String template, String paramKeyRegex, String paramValue) {
+        // recursively resolve the template usnig one param key-value pair
         var modifiedTemplate = Optional.ofNullable(template).map(t -> t.replaceAll(paramKeyRegex, paramValue))
                 .orElse(template);
         if (Optional.ofNullable(template).filter(t -> t.equals(modifiedTemplate)).isPresent()) {

@@ -6,6 +6,8 @@ Version: 1.0.0
 JDK: 11
 ```
 
+[![Build Status](https://travis-ci.com/sidmishraw/fmt.svg?branch=master)](https://travis-ci.com/sidmishraw/fmt)
+
 ## About
 
 `fmt` is a simple fluent-API based string-template utility. It is used for providing parametric string formatting –– somewhat like Python's `str.format()`.
